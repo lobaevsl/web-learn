@@ -42,12 +42,8 @@ function lastCheck(input){
 
 function checkValue(input){
     let value = input.value.toString();
-    if (value.startsWith('0') && value.length !== 1) {
+    if (value.startsWith('0') && value.length !== 1 && value[1] !== '.') {
         value.slice(1);
-        input.value = parseFloat(value);
-    }
-    if (value.startsWith('.')){
-        value += '0';
         input.value = parseFloat(value);
     }
     return value;
