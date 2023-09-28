@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000; /* Цвет ночного неба */
+    overflow: hidden; /* Скрываем выходящие за границы звёзды */
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8); /* Цвет звезд */
+    animation: twinkle 5s infinite;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.atom {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(204, 204, 204, 0.8) 0%, transparent 60%); /* Градиент для атома */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1; /* Помещаем атом на передний план */
+}
+
+.nucleus {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f00; /* Красный цвет для ядра */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+.electron {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #f90 50%, #f90 100%); /* Оранжевый цвет для электронов */
+}
+
+.electron-1 {
+    animation: orbit-1 2s linear infinite;
+}
+
+.electron-2 {
+    animation: orbit-2 3s linear infinite;
+}
+
+.electron-3 {
+    animation: orbit-3 4s linear infinite;
+}
+
+@keyframes orbit-1 {
+    0% { transform: rotate(0deg) translateX(60px) translateY(0); }
+    100% { transform: rotate(360deg) translateX(60px) translateY(0); }
+}
+
+@keyframes orbit-2 {
+    0% { transform: rotate(0deg) translateX(90px) translateY(0); }
+    100% { transform: rotate(360deg) translateX(90px) translateY(0); }
+}
+
+@keyframes orbit-3 {
+    0% { transform: rotate(0deg) translateX(120px) translateY(0); }
+    100% { transform: rotate(360deg) translateX(120px) translateY(0); }
+}

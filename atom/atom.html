@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Атом</title>
+</head>
+<body>
+<div class="stars">
+  <!-- Генерация случайных звёзд -->
+  <script>
+    const stars = document.querySelector('.stars');
+    const numStars = 100; // Количество звёзд
+
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      stars.appendChild(star);
+    }
+  </script>
+</div>
+<div class="atom">
+  <div class="nucleus"></div>
+  <div class="electron electron-1"></div>
+  <div class="electron electron-2"></div>
+  <div class="electron electron-3"></div>
+</div>
+</body>
+</html>
